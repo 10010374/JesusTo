@@ -3,94 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda JesusTo</title>
+    <title>Neuro Play | Tienda</title>
+    
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="TU-ID-AQUÍ"></script>
+
     <style>
         :root {
-            --primary-bg: #0f172a;
-            --accent-color: #38bdf8;
-            --text-color: #f8fafc;
-            --button-bg: #1e293b;
+            --bg: #0a0a0c;
+            --card-bg: #16161a;
+            --accent: #00f2ff; /* Cyan tecnológico */
+            --accent-glow: rgba(0, 242, 255, 0.4);
+            --text: #ffffff;
+            --secondary-text: #94a3b8;
+            --wa-color: #25d366;
+            --yape-purple: #742284;
+            --plin-cyan: #00d1ce;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0; padding: 20px;
+            display: flex; flex-direction: column; align-items: center;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
         }
 
-        .profile-container {
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
+        /* --- LOGOTIPO CSS MINIMALISTA --- */
+        .header { text-align: center; margin-top: 20px; margin-bottom: 30px; }
+        
+        .logo-css {
+            width: 70px; height: 70px;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto;
+            border: 2px solid #2d2d35;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
 
-        .profile-pic {
-            width: 100px;
-            height: 100px;
+        .logo-icon {
+            width: 35px; height: 35px;
+            border: 4px solid var(--accent);
             border-radius: 50%;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 1rem;
+            border-top-color: transparent;
+            position: relative;
+            transform: rotate(-45deg);
         }
 
-        h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        p { color: #94a3b8; margin-bottom: 2rem; }
-
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .logo-icon::after {
+            content: ''; position: absolute;
+            width: 4px; height: 16px;
+            background-color: var(--accent);
+            top: -8px; left: 15.5px;
+            border-radius: 4px;
         }
 
-        .link-card {
-            background-color: var(--button-bg);
-            color: var(--text-color);
+        h1 { font-size: 1.6rem; margin: 15px 0 5px 0; font-weight: 800; }
+        .tagline { color: var(--accent); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; }
+
+        .container { width: 100%; max-width: 400px; }
+
+        /* --- BOTONES Y ENLACES --- */
+        .category-label {
+            font-size: 0.7rem; color: var(--secondary-text);
+            margin: 25px 0 10px 10px; font-weight: 800; text-transform: uppercase;
+        }
+
+        .btn {
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--card-bg);
+            color: var(--text);
             text-decoration: none;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid transparent;
+            padding: 16px 20px; border-radius: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            border: 1px solid #2d2d35;
             transition: all 0.3s ease;
-            font-weight: 500;
         }
 
-        .link-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-3px);
-            background-color: #334155;
+        .btn:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            background: #1f1f25;
         }
 
-        .footer {
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            opacity: 0.5;
+        /* --- SECCIÓN DE PAGOS --- */
+        .payments-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
         }
+
+        .pay-card {
+            background: #1e1e26;
+            padding: 12px; border-radius: 12px;
+            text-align: center; font-size: 0.8rem;
+            border: 1px solid #333;
+            display: flex; flex-direction: column; align-items: center; gap: 5px;
+        }
+
+        .wa-primary { background: var(--wa-color); color: #000; border: none; justify-content: center; gap: 10px; }
+
+        .footer { margin-top: 40px; font-size: 0.75rem; color: var(--secondary-text); text-align: center; opacity: 0.6; }
     </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <img src="https://via.placeholder.com/100" alt="Foto de Perfil" class="profile-pic">
+    <div class="header">
+        <div class="logo-css"><div class="logo-icon"></div></div>
+        <h1>Neuro Play</h1>
+        <div class="tagline">Tech Enthusiast Store ⚡</div>
+    </div>
+
+    <div class="container">
         
-        <h1>Tu Nombre Aquí</h1>
-        <p>Ingeniero de Sistemas | Full Stack Developer</p>
+        <div class="category-label">Pide por WhatsApp (Atención Inmediata)</div>
+        <a href="https://wa.me/51936710169?text=Hola%20Jesús!%20Deseo%20hacer%20un%20pedido%20de%20Gadgets%20🚀" class="btn wa-primary" data-umami-event="Click WA General">
+            <strong>PEDIR POR WHATSAPP</strong> 📱
+        </a>
 
-        <div class="links-container">
-            <a href="https://linkedin.com/in/tuusuario" class="link-card" target="_blank">LinkedIn Profesional</a>
-            <a href="https://github.com/tuusuario" class="link-card" target="_blank">Portafolio GitHub</a>
-            <a href="https://tuweb.com" class="link-card" target="_blank">Sitio Web Personal</a>
-            <a href="mailto:correo@ejemplo.com" class="link-card" target="_blank">Contactar por Email</a>
+        <div class="category-label">Explorar Categorías</div>
+        <a href="https://wa.me/51936710169?text=Hola%20Jesús!%20Quiero%20el%20catálogo%20de%20Smartphones%20📱" class="btn" data-umami-event="Click Smartphones">
+            <span>Juguetes</span> <span>➔</span>
+        </a>
+        <a href="https://wa.me/51936710169?text=Hola%20Jesús!%20Quiero%20ver%20los%20Smartwatches%20⌚" class="btn" data-umami-event="Click Watches">
+            <span>⌚ Smartwatches</span> <span>➔</span>
+        </a>
+        <a href="https://wa.me/51936710169?text=Hola%20Jesús!%20Busco%20accesorios%20y%20carga%20🔋" class="btn" data-umami-event="Click Accesorios">
+            <span>🔋 Accesorios & Carga</span> <span>➔</span>
+        </a>
+
+        <div class="category-label">Aceptamos todos los pagos 💳</div>
+        <div class="payments-grid">
+            <div class="pay-card" style="border-left: 4px solid var(--yape-purple);">
+                <strong>Yape</strong>
+            </div>
+            <div class="pay-card" style="border-left: 4px solid var(--plin-cyan);">
+                <strong>Plin</strong>
+            </div>
         </div>
+        <a href="https://wa.me/51999888777?text=Hola%20Jesús!%20Deseo%20pagar%20con%20Tarjeta%20de%20Crédito/Débito%20💳" class="btn" style="font-size: 0.85rem;">
+            <span>💳 Tarjeta (Visa/Mastercard)</span> <span>🔗</span>
+        </a>
+
     </div>
 
-    <div class="footer">
-        © 2026 - Desarrollado con ❤️ y Código Limpio
-    </div>
+    <footer class="footer">
+        © 2026 Jesus Gadgets • Design by Systems Eng.<br>
+        Desplegado automáticamente vía GitHub Actions 🤖
+    </footer>
 
 </body>
 </html>
